@@ -11,7 +11,7 @@ import Menu from './Menu';
 import Dish from './Dish';
 import DishForm from './DishForm';
 import MeetTheTeam from './MeetTheTeam';
-import ProtectedRoute from './ProtectedRoute';
+// import ProtectedRoute from './ProtectedRoute';
 import AuthRoute from './AuthRoute';
 import FetchUser from './FetchUser';
 import { Switch, Route } from 'react-router-dom';

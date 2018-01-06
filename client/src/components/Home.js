@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Grid, Header, Image, Card, Segment } from 'semantic-ui-react';
+import { Grid, Header, Segment } from 'semantic-ui-react';
 
 class Home extends Component {
   render() {

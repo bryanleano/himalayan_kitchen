@@ -16,9 +16,6 @@ class NavBar extends Component {
             name='Logout'
             onClick={() => dispatch(handleLogout(history))}
           />
-          <Link to='/menu'>
-            <Menu.Item name='Menu' />
-          </Link>
         </Menu.Menu>
       );
     }
@@ -38,7 +35,7 @@ class NavBar extends Component {
     return (
       <div style={{ backgroundColor: "#f0b100", paddingTop: 5 }}>
         <Image centered src={logo} style={{ height: 75 }} />
-        <Segment basic centered style={{ marginTop: 0 }}>
+        <Segment basic style={{ marginTop: 0 }}>
           <Menu pointing secondary style={{ backgroundColor: "#f0b100" }}>
             <Link to='/'>
               <Menu.Item name='Home' />
