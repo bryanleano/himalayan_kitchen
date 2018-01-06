@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Image, Menu } from 'semantic-ui-react';
+import { Image, Menu, Segment } from 'semantic-ui-react';
 import { Link, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { handleLogout } from '../actions/auth';
@@ -35,14 +35,23 @@ class NavBar extends Component {
     return (
       <div style={{ backgroundColor: "#f0b100", paddingTop: 5 }}>
         <Image centered src={logo} style={{ height: 75 }} />
-        <div>
+        <Segment basic centered style={{ marginTop: 0 }}>
           <Menu pointing secondary style={{ backgroundColor: "#f0b100" }}>
             <Link to='/'>
-              <Menu.Item name='home' />
+              <Menu.Item name='Home' />
+            </Link>
+            <Link to='/menu'>
+              <Menu.Item name='Menu' />
+            </Link>
+            <Link to='/about'>
+              <Menu.Item name='About' />
+            </Link>
+            <Link to='/contact'>
+              <Menu.Item name='Contact' />
             </Link>
             { this.rightNavs() }
           </Menu>
-        </div>
+        </Segment>
       </div>
     );
   }
