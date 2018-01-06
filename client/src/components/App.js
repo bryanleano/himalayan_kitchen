@@ -18,7 +18,7 @@ import { Switch, Route } from 'react-router-dom';
 class App extends Component {
   render() {
     return (
-      <div style={{ backgroundColor: "#741d16", height: "100vh" }}>
+      <div style={{ backgroundColor: "#741d16", height: "100vh", marginBottom: "150px" }}>
         <NavBar />
         <br/>
         <Flash />
