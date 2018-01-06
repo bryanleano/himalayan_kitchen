@@ -1,22 +1,26 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { Segment, Header, List } from 'semantic-ui-react';
 import axios from 'axios';
+import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
+import { setFlash } from '../actions/flash';
+import { Segment, Header, List } from 'semantic-ui-react';
 
 class Menu extends React.Component {
   state = { dishes:[] }
 
   componentDidMount() {
+    const { dispatch } = this.props;
     axios.get('/api/dishes')
       .then(res => {
         this.setState({ dishes: res.data })
       }).catch(err =>{
-        console.log(err);
+        dispatch(setFlash('Unable to retrieve dishes. Please try again', 'red'))
       });
   }
 
   displayDishes = () => {
-    return this.state.dishes.map( dish => {
+    const { dishes } = this.state;
+    return dishes.map( dish => {
       return (
         <List.Item>
           <Link to={`/dishes/${dish.id}`}>
@@ -39,4 +43,4 @@ class Menu extends React.Component {
   }
 }
 
-export default Menu;
+export default connect()(Menu);
