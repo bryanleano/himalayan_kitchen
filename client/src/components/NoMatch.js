@@ -27,6 +27,7 @@ const styles = {
   overflow: 'hidden', 
   height: '100vh',
   marginTop: -20,
+  marginBottom: -20,
 }
 
 export default NoMatch;
