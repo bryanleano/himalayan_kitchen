@@ -25,7 +25,7 @@ class Menu extends React.Component {
       return dishes.map( dish => {
         return (
           <Grid.Column key={dish.id}>
-            <Card as={Link} to={`/dishes/${dish.id}`} raised styles={{ padding: 5 }}>
+            <Card fluid as={Link} to={`/dishes/${dish.id}`} raised styles={{ padding: 5 }}>
               <Card.Content>
                 <Card.Description styles={{ textAlign: "center" }}>
                   {dish.name}: ${dish.price}
@@ -56,8 +56,8 @@ class Menu extends React.Component {
           <Grid.Column width={12}>
             <Segment style={{ backgroundColor: "#fffdef", height: "auto" }}>
               <DishForm addDish={this.addDish}/> <br />
-              <Grid container columns={3}>
-                <Grid.Row>
+              <Grid container>
+                <Grid.Row columns={3}>
                   {this.displayDishes()}
                 </Grid.Row>
               </Grid>
