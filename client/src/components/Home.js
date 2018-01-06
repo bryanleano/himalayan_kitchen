@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import image_name from '../images/landing.png'; 
 import { Card, Grid, Header, Image, Segment } from 'semantic-ui-react';
 
 class Home extends Component {
