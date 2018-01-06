@@ -6,7 +6,7 @@ const MeetTheTeam = () => (
       <Grid.Row>
         <Grid.Column width={2}/>
         <Grid.Column width={12}>
-          <Segment style={{ backgroundColor: "#fffdef", height: "100vh" }}>
+          <Segment style={{ backgroundColor: "#fffdef", height: "auto" }}>
             <Grid>
               <Grid.Column width={11}>
                 <Header as="h1">
