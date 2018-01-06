@@ -1,16 +1,32 @@
 import React, { Component } from 'react';
-import { Header } from 'semantic-ui-react';
+import { Header, Segment } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
+import himalaya from '../images/himalaya.jpg'
 
 class NoMatch extends Component {
   render() {
     return (
-      <Header as='h1' textAlign='center'>
-        Page Not Found
-        <Link to='/'> Home</Link>
-      </Header>
+      <Segment style={styles}>
+        <Header size='large' textAlign='center' color='yellow'>
+          404 Error
+        </Header>
+        <Header size='large' textAlign='center' color='yellow'>
+          You got lost in the Himalayas!
+        </Header>
+        <Header size='large' textAlign='center' color='yellow'>
+          Click here to go <Link to='/'> Home</Link>
+        </Header>
+      </Segment>
     );
   }
+}
+
+const styles = {
+  backgroundImage: "url(" + himalaya + ")",
+  backgroundSize: 'cover',
+  overflow: 'hidden', 
+  height: '100vh',
+  margintop: 130,
 }
 
 export default NoMatch;
