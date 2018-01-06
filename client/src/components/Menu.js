@@ -3,7 +3,7 @@ import axios from 'axios';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { setFlash } from '../actions/flash';
-import { Segment, Header, List } from 'semantic-ui-react';
+import { Grid, Segment, Header, List } from 'semantic-ui-react';
 
 class Menu extends React.Component {
   state = { dishes:[] }
@@ -33,12 +33,19 @@ class Menu extends React.Component {
 
   render () {
     return (
-      <Segment basic>
-        <Header as='h1'>Menu</Header>
-        <List>
-          {this.displayDishes()}
-        </List>
-      </Segment>
+      <Grid centered>
+        <Grid.Row>
+          <Grid.Column width={2}/>
+          <Grid.Column width={12}>
+            <Segment style={{ backgroundColor: "#fffdef", height: "100vh" }}>
+              <List>
+                {this.displayDishes()}
+              </List>
+            </Segment>
+          </Grid.Column>
+          <Grid.Column width={2}/>
+        </Grid.Row>
+      </Grid>
     );
   }
 }
