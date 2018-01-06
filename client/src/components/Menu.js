@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import DishForm from './DishForm';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { setFlash } from '../actions/flash';
@@ -29,6 +30,10 @@ class Menu extends React.Component {
         </List.Item>
       );
     });
+  }
+
+  addDish = (dish) => {
+    this.setState({ dishes: [dish, ...this.state.dishes] });
   }
 
   render () {

@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import { connect } from 'react-redux';
-import { Link, Redirect } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { setFlash } from '../actions/flash';
 import { Button, Segment, Header, List } from 'semantic-ui-react';
 
@@ -41,6 +41,7 @@ class Dish extends React.Component {
         </List>
           <Button as={Link} to={'/menu'}>Back to Menu</Button>
           <Button onClick={this.deleteDish}>Delete</Button>
+          <Button as={Link} to={`/dishes/${id}/edit`}>Edit</Button>
       </Segment>
     );
   }
