@@ -14,7 +14,7 @@ class NoMatch extends Component {
           You got lost in the Himalayas!
         </Header>
         <Header size='large' textAlign='center' color='yellow'>
-          Click here to go <Link to='/'> Home</Link>
+          Click to go <Link to='/'> Home</Link>
         </Header>
       </Segment>
     );
@@ -26,7 +26,7 @@ const styles = {
   backgroundSize: 'cover',
   overflow: 'hidden', 
   height: '100vh',
-  margintop: 130,
+  marginTop: -20,
 }
 
 export default NoMatch;
