@@ -3,7 +3,7 @@ import axios from 'axios';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { setFlash } from '../actions/flash';
-import { Button, Segment, Header, List } from 'semantic-ui-react';
+import { Button, Dimmer, Grid, Header, List, Loader, Segment } from 'semantic-ui-react';
 
 class Dish extends React.Component {
   state = { dish: {} };
@@ -32,27 +32,41 @@ class Dish extends React.Component {
 
   displayDish = () => {
     const { id, name, ingredients, price } = this.state.dish;
+    if( this.state.dish.id )
+      return (
+        <Segment basic>
+          <Header as='h1'>{name}</Header>
+          <List>
+            <List.Item>Price: ${price}</List.Item>
+            <List.Item>Special Ingredient: {ingredients}</List.Item>
+          </List>
+            <Button as={Link} to={'/menu'}>Back to Menu</Button>
+            <Button onClick={this.deleteDish}>Delete</Button>
+            <Button as={Link} to={`/dishes/${id}/edit`}>Edit</Button>
+        </Segment>
+      );
+    else
     return (
-      <Segment basic>
-        <Header as='h1'>{name}</Header>
-        <List>
-          <List.Item>Price: ${price}</List.Item>
-          <List.Item>Special Ingredient: {ingredients}</List.Item>
-        </List>
-          <Button as={Link} to={'/menu'}>Back to Menu</Button>
-          <Button onClick={this.deleteDish}>Delete</Button>
-          <Button as={Link} to={`/dishes/${id}/edit`}>Edit</Button>
-      </Segment>
-    );
+      <Dimmer inverted active style={{ height: "50vh"}}>
+        <Loader active>Loading items...</Loader>
+      </Dimmer>   
+    )  
   }
 
   render () {
     return (
-      <Segment basic>
-        <Header as='h1'>Dish</Header>
-        {this.displayDish()}
-      </Segment>
-    );
+      <Grid centered>
+        <Grid.Row>
+          <Grid.Column width={2}/>
+          <Grid.Column width={12}>
+            <Segment style={{ backgroundColor: "#fffdef", height: "auto" }}>
+              {this.displayDish()}
+            </Segment>
+          </Grid.Column>
+          <Grid.Column width={2}/>
+        </Grid.Row>
+      </Grid>
+    )
   }
 }
 

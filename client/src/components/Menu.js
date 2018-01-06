@@ -55,13 +55,6 @@ class Menu extends React.Component {
           <Grid.Column width={2}/>
           <Grid.Column width={12}>
             <Segment style={{ backgroundColor: "#fffdef", height: "auto" }}>
-              <Header centered as="h1">
-                New Item:
-              </Header>
-              <DishForm addDish={this.addDish}/>
-              <Header centered as="h1">
-                Menu:
-              </Header>
               <Grid container>
                 <Grid.Row columns={3}>
                   {this.displayDishes()}
