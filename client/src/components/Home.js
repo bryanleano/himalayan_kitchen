@@ -1,13 +1,6 @@
 import React, { Component } from 'react';
 import { Card, Grid, Header, Image, Segment } from 'semantic-ui-react';
 
-const FoodCard = () => (
-  <Card>
-    <Image src='../images/himfood.png' />
-
-
-  </Card>
-)
 class Home extends Component {
   render() {
     return (
