@@ -1,40 +1,43 @@
 import React, { Component } from 'react';
+import image_name from '../images/landing.png'; 
 import { Card, Grid, Header, Image, Segment } from 'semantic-ui-react';
 
-const FoodCard = () => (
-  <Card>
-    <Image src='../images/himfood.png' />
-    
-    
-  </Card>
-)
 class Home extends Component {
   render() {
     return (
-      <Grid centered>
-      <Grid.Row>
-        <Grid.Column width={2}/>
-        <Grid.Column width={12}>
-          <Segment style={{ backgroundColor: "#fffdef", height: "100vh" }}>
-            <Grid>
-              <Grid.Column width={11}>
-                <Header as="h1">
-                  
-                </Header>
-                <div style={{ marginLeft: "15px", textAlign: "justify" }}>
-                
-
-                  
-                </div>
-              </Grid.Column>
-            </Grid>
-          </Segment>
-        </Grid.Column>
-        <Grid.Column width={2}/>
-      </Grid.Row>
-    </Grid>
+      <Segment style={styles.backgroundImage}>
+        <Grid columns={2}>
+          <Grid.Row>
+            <Grid.Column>
+              <Header
+                textAlign='center'
+                style={styles.headerText}
+                >
+                Join us at our table.
+              </Header>
+            </Grid.Column>
+          </Grid.Row>
+        </Grid>
+      </Segment>
     );
   }
+}
+
+const styles = {
+  backgroundImage: {
+    background: `linear-gradient( rgba(0, 0, 0, .25), rgba(0, 0, 0, .55) ), url(${image_name})`,
+    backgroundSize: 'cover',
+    overflow: 'hidden',
+    width: '100%',
+    height: '100vh',
+  },
+    headerText: {
+    color: '#fffdef',
+    fontFamily: 'helvetica',
+    fontSize: '7em',
+    letterSpacing: '5px',
+    marginTop: '55%',
+  },
 }
 
 export default Home;
