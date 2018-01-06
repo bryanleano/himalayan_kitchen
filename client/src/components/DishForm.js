@@ -53,7 +53,7 @@ class DishForm extends React.Component {
   cancelButton = () => {
     const { id } = this.state.dish;
     if(id)
-      return(<Button as={Link} to={`/dishes/${id}`}>Cancel</Button>);
+      return(<Button floated="right" as={Link} to={`/dishes/${id}`}>Cancel</Button>);
   }
 
   render() {
@@ -62,12 +62,12 @@ class DishForm extends React.Component {
     return(
       <Form onSubmit={this.handleSubmit}>
         <Form.Group widths='equal'>
-          <Form.Input label='Name' value={name} id='name' onChange={this.handleChange} />
-          <Form.Input label='Price' value={price} id='price' onChange={this.handleChange} />
-          <Form.Input label='Special Ingredient' value={ingredients} id='ingredients' onChange={this.handleChange} />
+          <Form.Input placeholder='Name' value={name} id='name' onChange={this.handleChange} />
+          <Form.Input placeholder='Price' value={price} id='price' onChange={this.handleChange} />
+          <Form.Input placeholder='Special Ingredient' value={ingredients} id='ingredients' onChange={this.handleChange} />
+          <Button primary floated="right" type='submit'>Save</Button>
         </Form.Group>
         { this.cancelButton() }
-        <Button type='submit'>Save</Button>
       </Form>
     );
   }

@@ -9,9 +9,8 @@ import Home from './Home';
 import About from './About'
 import Menu from './Menu';
 import Dish from './Dish';
-import DishForm from './DishForm';
 import MeetTheTeam from './MeetTheTeam';
-import ProtectedRoute from './ProtectedRoute';
+// import ProtectedRoute from './ProtectedRoute';
 import AuthRoute from './AuthRoute';
 import FetchUser from './FetchUser';
 import { Switch, Route } from 'react-router-dom';
@@ -32,14 +31,12 @@ class App extends Component {
             <Route exact path='/menu' component={Menu} />
             <Route exact path='/meettheteam' component={MeetTheTeam} />
             <Route exact path='/dishes/:id' component={Dish} />
-            <Route exact path='/dishes/:id/edit' component={DishForm} />
             <Route component={NoMatch} />
           </Switch>
         </FetchUser>
-        <br />
         <Footer />
       </div>
-
+      
     );
   }
 }

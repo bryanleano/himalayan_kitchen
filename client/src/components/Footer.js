@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Footer = () => (
-  <div class="ui inverted vertical footer segment" style={{ backgroundColor: "#f0b100"}}>
+  <div class="ui inverted vertical footer segment" style={styles.footer}>
   <div class="ui center aligned container">
       <h4 class="ui inverted header">&copy; Copyright 2018 | All rights reserved | JAABI Studios</h4>
       <a href="https://www.facebook.com/"><i class="facebook square icon big"></i></a>
@@ -12,5 +12,15 @@ const Footer = () => (
   </div>
   </div>
 )
+
+const styles = {
+  footer: {
+    backgroundColor: "#f0b100",
+    bottom: '0px',
+    left: '0px',
+    right: '0px',
+    marginTop: '20px'
+  }
+}
 
 export default Footer;
