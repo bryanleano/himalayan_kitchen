@@ -45,7 +45,7 @@ class Menu extends React.Component {
   }
 
   addDish = (dish) => {
-    this.setState({ dishes: [dish, ...this.state.dishes] });
+    this.setState({ dishes: [...this.state.dishes, dish] });
   }
 
   render () {
@@ -55,6 +55,7 @@ class Menu extends React.Component {
           <Grid.Column width={2}/>
           <Grid.Column width={12}>
             <Segment style={{ backgroundColor: "#fffdef", height: "auto" }}>
+              <DishForm addDish={this.addDish}/>
               <Grid container>
                 <Grid.Row columns={3}>
                   {this.displayDishes()}
