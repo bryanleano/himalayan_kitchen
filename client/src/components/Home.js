@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Grid, Header, Segment } from 'semantic-ui-react';
+import { Card, Grid, Header, Image, Segment } from 'semantic-ui-react';
 
 const FoodCard = () => (
   <Card>

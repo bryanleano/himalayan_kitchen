@@ -4,7 +4,7 @@ import DishForm from './DishForm';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { setFlash } from '../actions/flash';
-import { Card, Dimmer, Grid, Loader, Segment } from 'semantic-ui-react';
+import { Card, Dimmer, Grid, Header, Loader, Segment } from 'semantic-ui-react';
 
 class Menu extends React.Component {
   state = { dishes: [] }
@@ -55,7 +55,13 @@ class Menu extends React.Component {
           <Grid.Column width={2}/>
           <Grid.Column width={12}>
             <Segment style={{ backgroundColor: "#fffdef", height: "auto" }}>
-              <DishForm addDish={this.addDish}/> <br />
+              <Header centered as="h1">
+                New Item:
+              </Header>
+              <DishForm addDish={this.addDish}/>
+              <Header centered as="h1">
+                Menu:
+              </Header>
               <Grid container>
                 <Grid.Row columns={3}>
                   {this.displayDishes()}
