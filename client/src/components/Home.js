@@ -8,7 +8,7 @@ class Home extends Component {
         <Grid.Row>
           <Grid.Column width={2}/>
           <Grid.Column width={12}>
-            <Segment style={{ backgroundColor: "#fffdef", height: "100vh" }}>
+            <Segment style={{ backgroundColor: "#fffdef", height: "auto" }}>
               <Header as="h1">
                 Home
               </Header>
