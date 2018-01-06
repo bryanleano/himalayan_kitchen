@@ -43,6 +43,7 @@ class Menu extends React.Component {
           <Grid.Column width={2}/>
           <Grid.Column width={12}>
             <Segment style={{ backgroundColor: "#fffdef", height: "100vh" }}>
+              <DishForm addDish={this.addDish}/>
               <List>
                 {this.displayDishes()}
               </List>
