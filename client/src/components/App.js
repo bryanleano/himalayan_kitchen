@@ -11,6 +11,8 @@ import Menu from './Menu';
 import Gallery from './Gallery';
 import Contact from './Contact';
 import Dish from './Dish';
+import DishForm from './DishForm';
+
 import MeetTheTeam from './MeetTheTeam';
 // import ProtectedRoute from './ProtectedRoute';
 import AuthRoute from './AuthRoute';
@@ -35,12 +37,14 @@ class App extends Component {
             <Route exact path='/gallery' component={Gallery} />
             <Route exact path='/meettheteam' component={MeetTheTeam} />
             <Route exact path='/dishes/:id' component={Dish} />
+            <Route exact path='/dishes/:id/edit' component={DishForm} />
+
             <Route component={NoMatch} />
           </Switch>
         </FetchUser>
         <Footer />
       </div>
-      
+
     );
   }
 }
