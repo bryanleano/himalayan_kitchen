@@ -1,5 +1,6 @@
 import React from 'react';
-import { Grid, Segment, Header } from 'semantic-ui-react';
+import { Grid, Segment, Header, Image } from 'semantic-ui-react';
+import meettheteam from '../images/meettheteam.jpg';
 
 const MeetTheTeam = () => (
   <Grid centered>
@@ -21,6 +22,7 @@ const MeetTheTeam = () => (
                   <p>Members of JAABI Studios are currently looking for employment.</p>
                 </div>
               </Grid.Column>
+              <Image src={meettheteam} style={{ height: "100vh"}} />
             </Grid>
           </Segment>
         </Grid.Column>

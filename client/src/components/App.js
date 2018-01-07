@@ -8,6 +8,8 @@ import Flash from './Flash';
 import Home from './Home';
 import About from './About'
 import Menu from './Menu';
+import Gallery from './Gallery';
+import Contact from './Contact';
 import Dish from './Dish';
 import MeetTheTeam from './MeetTheTeam';
 // import ProtectedRoute from './ProtectedRoute';
@@ -29,6 +31,8 @@ class App extends Component {
             <AuthRoute exact path='/login' component={Login} />
             <AuthRoute exact path='/register' component={Register} />
             <Route exact path='/menu' component={Menu} />
+            <Route exact path='/contact' component={Contact} />
+            <Route exact path='/gallery' component={Gallery} />
             <Route exact path='/meettheteam' component={MeetTheTeam} />
             <Route exact path='/dishes/:id' component={Dish} />
             <Route component={NoMatch} />
